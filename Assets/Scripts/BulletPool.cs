@@ -41,7 +41,7 @@ public class BulletPool : MonoBehaviour
 
         if (m_notEnoughBulletsInPool)
         {
-            GameObject bullet = Instantiate(m_pooledBullet);
+            GameObject bullet = Instantiate(m_pooledBullet, this.transform);
             bullet.SetActive(false);
             m_bullets.Add(bullet);
             return bullet;

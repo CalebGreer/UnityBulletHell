@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SemiCircleFirePattern : BaseFirePattern
+public class CircleFirePattern : BaseFirePattern
 {
     [SerializeField] private int m_bulletsAmount = 10;
-    [SerializeField] private float m_startAngle = 90f;
-    [SerializeField] private float m_endAngle = 270f;
 
     protected override void Fire()
     {
-        float angleStep = (m_endAngle - m_startAngle) / m_bulletsAmount;
-        float angle = m_startAngle;
+        float angleStep = 360 / m_bulletsAmount;
+        float angle = 0;
 
         for (int i = 0; i < m_bulletsAmount + 1; i++)
         {
